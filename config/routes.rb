@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  resources :products, only: [:index, :show]
+  resources :categories, only: [:index, :show]
+  resouces :orders, only: [:index, :show, :create]
+  resouces :order_items, only: [:index. :show, :create, :edit, :update, :destroy]
+
 end
